@@ -1,0 +1,52 @@
+{% comment %}
+Copyright 2009 - Participatory Culture Foundation
+
+This file is part of Miro Community.
+
+Miro Community is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Miro Community is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}
+
+{% load comments i18n localtv_thumbnail filters uploadtemplate_tags %}
+
+<li>
+						<span class="count">{{ forloop.counter }}</span>
+
+  <a href="{{ video.get_absolute_url }}" class="image small_thumb" style="background: url({% get_thumbnail_url video 88 68 %}) no-repeat;">
+    {% get_comment_count for video as comment_count %}
+    {% if comment_count %}<span class="comments_overlay"><span>{{ comment_count }}</span></span>{% endif %}
+  </a>
+  
+  <div class="item_details">
+  
+  
+  
+    <h2><a href="{{ video.get_absolute_url }}">
+      {% if video.name %}
+      {{ video.name }}
+      {% else %}
+      {% trans "(no title)" %}
+      {% endif %}
+    </a>
+    </h2>
+    <div class="credits"><span class="posted_by">
+      {% with video as instance %}
+      {% include "localtv/inline_edit/video_authors.html" %}
+      {% endwith %}
+    </span></div>
+
+  </div>
+    
+
+</li>
+

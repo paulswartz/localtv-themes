@@ -1,0 +1,270 @@
+{% extends "localtv/base.html" %}
+{% comment %}
+Copyright 2009 - Participatory Culture Foundation
+
+This file is part of Miro Community.
+
+Miro Community is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Miro Community is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}
+
+
+{% load video i18n comments filters uploadtemplate_tags editable_widget localtv_thumbnail tweets email_share_tags%}
+
+{% block body_id %}view_video{% endblock %}
+
+
+{% block title %}{{ current_video.name }} - {{ block.super }}{% endblock %}
+
+{% block head %}
+  {% if edit_video_form %}
+    <script src="{% get_static_url "/js/new_edit_form.js" %}"
+            type="text/javascript">
+    </script>
+    <script type="text/javascript"
+            src="{% get_static_url "/js/edit_form.js" %}">
+    </script>
+  {% endif %}
+  {% get_comment_form for current_video as comment_form %}
+  {% if user_is_admin %}
+  {{ comment_form.media }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if edit_video_form %}
+    {% include "localtv/admin/edit_video_form.html" %}
+  {% endif %}
+
+  {% get_comment_count for current_video as comment_count %}
+
+    <div class="video_meta">
+      <div class="vid_title">
+        {% if user_is_admin %}
+        {% editable_widget current_video "name" %}
+        {% else %}
+        <h2>
+        {% if current_video.name %}
+        {{ current_video.name }}
+        {% else %}
+        {% trans "(no title)" %}
+        {% endif %}
+        </h2>
+        {% endif %}
+				
+				<div class="tweet_up">					
+					<a href="{% tweet_url for current_video %}">Tweet a Thumbs Up!</a>
+					{% get_tweet_count for current_video as tweet_count %}
+					<p>{{ tweet_count }} Tweet{{ tweet_count|pluralize }} (<a href="#comments">see below</a>)</p>
+				</div>
+				
+      </div>
+      <div class="vid_author">
+        <div class="posted_by">
+          {% if user_is_admin %}
+          {% editable_widget current_video "authors" %}
+          {% else %}
+          {% with current_video as instance %}
+          {% include "localtv/inline_edit/video_authors.html" %}
+          {% endwith %}
+          {% endif %}
+        </div>
+        <a href="#comments" class="comments_link">{{ comment_count }} Comment{{ comment_count|pluralize }}</a>
+      </div>
+      
+      
+
+
+      
+    </div>
+    <div id="video_wrapper">
+    	<div class="vid_inner">
+    	
+
+    	
+        {% if current_video.embed_code %}
+        {{ current_video.embed_code|wmode_transparent }}
+        {% else %}
+        {% video current_video.file_url mime_type=current_video.file_url_mimetype width=534 height=430%}
+        {% if current_video.file_url_mimetype|is_ogg_media %}
+        <p class="help">
+          This video displays best with a browser that supports the HTML5 &lt;video&gt; tag &mdash; if you're having trouble viewing it, try the <a href="http://www.mozilla.com/firefox/">Firefox</a> browser.
+        </p>
+        {% endif %}
+        {% endif %}
+<!--        <img src="{% get_thumbnail_url current_video 534 430 %}" alt="Background thumbnail for {{ current_video.name }}" /> -->
+</div>
+    </div>
+
+
+<div class="content">
+	<div class="inner_content">
+
+	<div class="main">
+	
+	<p class="description editors_notes"><span class="written_by">Jeffrey from WNYC writes:</span>WNYC 93.9 FM and AM 820 are
+							 New York's flagship public radio stations, 
+							broadcasting the finest programs from <a href="video_page.html">National Public Radio</a> and Public Radio International, 
+							as well as a wide range of award-winning local programming. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+							 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+							 ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+							  mollit anim id est laborum... <a href="video_page.html">Keep Reading</a></p>
+
+
+
+	
+		{% if user_is_admin %}
+    {% editable_widget current_video "description" %}
+    {% else %}
+    		<div class="heading">
+
+				<h2 id="comments">Description</h2>
+
+			</div>
+
+    <div class="description">
+      {{ current_video.description|sanitize }}
+    </div>
+    {% endif %}
+    {% if comment_count %}<div class="heading"><h2 class="comments-title">{{ comment_count }} Comment{{ comment_count|pluralize }}</h2></div>{% endif %}
+    {% get_comment_list for current_video as comments %}
+    {% if comments %}
+    <ul class="comment_list">
+      {% for comment in comments %}
+      
+      
+      
+      
+      <li>
+     <div class="item_details">
+
+          <h4><a href="#">{{ comment.user_name }}</a> <span>2 days ago</span></h4>
+        
+        
+        <div class="comment">
+          {{ comment.comment|sanitize }}
+        </div>
+        
+						</div>
+          {% if user_is_admin %}
+          <div class="comment-moderation">
+            <form action="{% url comments-delete comment.id %}" method="post">
+              <input type="hidden" name="next" value="{{ request.META.PATH_INFO }}">
+              <button type="submit">delete</button>
+            </form>
+            <form action="{% url comments-spam comment.id %}" method="post">
+              <input type="hidden" name="next" value="{{ request.META.PATH_INFO }}">
+              <button type="submit">spam</button>
+            </form>
+          </div>
+          {% endif %}
+
+        
+        
+      </li>
+      
+      
+      
+            
+      
+      
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if not sitelocation.comments_required_login or request.user.is_authenticated %}
+    <div class="heading">
+    <h2 class="clear post-comment-title">Post a Comment</h2>
+    </div>
+    {% get_comment_form for current_video as comment_form %}
+    <div class="comment_form">
+	    <form action="{% comment_form_target %}" method="post">
+	      {% with comment_form as form %}
+	      {% include "comments/form_base.html" %}
+	      {% endwith %}
+	    </form>
+    </div>    
+    
+    {% endif %}
+  </div>
+
+  <div class="sidebar">
+  
+  <div class="share_box">
+  
+  	
+					<div class="share_links">
+                                          <a class="facebook" name="fb_share" type="icon_link" href="http://www.facebook.com/sharer.php">Post to Facebook</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+                                          <a href="{% get_email_share_url_for current_video %}" class="email">Email to Friends</a>
+                                          {% if current_video.file_url %}<a href="{{ current_video.file_url }}" class="download">Download Video File</a>{% endif %}
+					</div>
+					
+	
+   	<div class="meta">
+          {% if user_is_admin %}
+          {% editable_widget current_video "tags" %}
+          {% else %}
+          {% with current_video as instance %}
+          {% include "localtv/inline_edit/video_tags.html" %}
+          {% endwith %}
+          {% endif %}
+
+          {% if user_is_admin %}
+          {% editable_widget current_video "categories" %}
+          {% else %}
+          {% with current_video as instance %}
+          {% include "localtv/inline_edit/video_categories.html" %}
+          {% endwith %}
+          {% endif %}
+        </div>
+<div class="clear">&nbsp;</div>
+
+</div>
+  
+  
+  
+    {% if sitelocation.sidebar_html %}
+    <div id="about" class="rounded">
+      {% autoescape off %}
+        {{ sitelocation.sidebar_html }}
+      {% endautoescape %}
+    </div>
+    {% endif %}
+    <div id="sidebar_header">
+    
+    
+    <div class="heading">
+      {% if category %}
+      <h2>{{ category.name }}</h2>
+      {% else %}
+      <h2>Most Popular</h2>
+
+        {% url localtv_feeds_popular as popular_rss %}
+        <a href="{{ popular_rss }}" class="rss">RSS</a> 
+        <a href="http://subscribe.getmiro.com/?url1=http%3A//{{ sitelocation.site.domain|urlencode }}{{ popular_rss|urlencode }}" class="subscribe">Subscribe</a>
+      {% endif %}
+    </div>
+</div>
+
+    {% for video in popular_videos|slice:":9" %}
+    <ul class="small_vid_list">
+      {% include "localtv/sidebar_video.html" %}
+      
+    </ul>
+    {% endfor %}
+  </div>
+  
+</div>
+</div>  
+
+{% endblock content %}

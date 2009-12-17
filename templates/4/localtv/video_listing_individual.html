@@ -1,0 +1,63 @@
+{% comment %}
+Copyright 2009 - Participatory Culture Foundation
+
+This file is part of Miro Community.
+
+Miro Community is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Miro Community is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}
+
+
+
+{% load comments i18n localtv_thumbnail filters uploadtemplate_tags %}
+
+
+	<li>
+		<a href="{{ video.get_absolute_url }}" class="image med_thumb" style="background: url({% get_thumbnail_url video 222 169 %}) 5px 5px no-repeat;">
+                  {% get_comment_count for video as comment_count %}
+                  {% if comment_count %}<span class="comments_overlay"><span>{{ comment_count }} Comment{{ comment_count.pluralize }}</span></span>{% endif %}
+                </a>
+		<div class="item_details">
+		
+			<h2><a href="{{ video.get_absolute_url }}" title="{{ video.name }}">{% if video.name %} {{ video.name }} {% else %} {% trans "(no title)" %} {% endif %}</a></h2>
+			
+			<div class="credits">
+			
+			<span class="posted_by">
+                          {% with video as instance %}
+                          {% include "localtv/inline_edit/video_authors.html" %}
+                          {% endwith %}
+                        </span>
+		
+			<span class="posted_at">{{ video.when_prefix }} {{ video.when|simpletimesince }} ago</span>
+			
+			</div>
+			
+			<p class="description">
+				{% autoescape off %}
+				{{ video.description|striptags }}
+				{% endautoescape %}
+			</p>
+			
+			
+			
+			<a href="{{ video.get_absolute_url }}" class="watch_small"><span>Watch</span></a>
+		
+		</div>
+	</li>
+
+
+					
+					
+					
+					
