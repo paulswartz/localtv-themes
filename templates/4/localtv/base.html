@@ -38,7 +38,8 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     {% endif %}
     <script src="{% get_static_url "js/extern/jquery.tools.min.js" %}" type="text/javascript">
     </script>
-   
+    <script src="/js/extern/jquery.form.js"></script>
+    <script src="{% get_static_url "js/submit_video.js" %}"></script>
    
    <script type="text/javascript">
 
@@ -51,13 +52,10 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
         expose: '#499ad9', 
         effect: 'apple', 
  
-        onBeforeLoad: function() { 
- 
-            // grab wrapper element inside content 
-            var wrap = this.getContent().find(".contentWrap"); 
- 
-            // load the page specified in the trigger 
-            wrap.load(this.getTrigger().attr("href")); 
+        onBeforeLoad: function() {
+            wrap = this;
+            $.get(this.getTrigger().attr("href"),
+                  function(result){setup_submit_callbacks(wrap, result);});
         } 
  
 	    }); 

@@ -29,8 +29,10 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 				<br /><br />			{% else %}<br /><br /><br /><br />
 				Thanks for submitting a video, our moderators will review it soon. 
 				<br /><br />
+                                {% if not request.is_ajax %}
 				<a href="/">Return to the Home Page</a>
 				<br /><br />
+                                {% endif %}
 			{% endif %}
 		</div>
 	</div>
