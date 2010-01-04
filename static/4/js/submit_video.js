@@ -4,7 +4,6 @@ function setup_submit_callbacks(wrap, result) {
         location.href = next_link.attr('href');
         return;
     }
-    content = wrap.getContent().find('.contentWrap');
-    content.html(result).find('form').ajaxForm(
+    wrap.getContent().find('.contentWrap').html(result).find('form').ajaxForm(
         function(result){setup_submit_callbacks(wrap, result);});
 }
