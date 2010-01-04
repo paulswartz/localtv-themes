@@ -1,6 +1,5 @@
 function setup_submit_callbacks(wrap, result) {
     next_link = $(result).find("a#next");
-    console.log(next_link);
     if (next_link.length) {
         location.href = next_link.attr('href');
         return;
