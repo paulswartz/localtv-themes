@@ -65,6 +65,22 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 		</script>
 
 
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
 
 
     <title>{% block title %}{{ sitelocation.site.name }}{% endblock title %}</title>
@@ -139,7 +155,44 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 				<ul>
 					<li><a class="nav_home" href="{% url localtv_index %}">Home<span></span></a></li>
 					<li><a class="nav_new" href="{% url localtv_list_new %}">New Videos<span></span></a></li>
-					<li><a class="nav_cat" href="categories.html">Categories<span></span></a></li>
+					<li>
+						<a class="nav_cat" href="categories.html">Categories<span></span></a>
+						
+						<ul>
+							<div>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							</div>
+							
+							<div>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							</div>
+							<div>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">Categories</a></li>
+							<li><a href="#">CategoriesCategoriesCategories</a></li>
+							<li><a href="#">Categories</a></li>
+							</div>
+						</ul>
+						
+					</li>
 					<li><a class="nav_feat" href="{% url localtv_list_featured %}">Featured<span></span></a></li>
 					<li><a class="nav_pop" href="{% url localtv_list_popular %}">Popular<span></span></a></li>
 					{% if sitelocation.display_submit_button %}<li><a href="{% url localtv_submit_video %}" rel="#overlay">Submit</a></li>{% endif %}

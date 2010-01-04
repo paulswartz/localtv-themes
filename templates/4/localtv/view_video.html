@@ -39,6 +39,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
   {% if user_is_admin %}
   {{ comment_form.media }}
   {% endif %}
+  {% include "localtv/view_video_meta.html" %}
 {% endblock %}
 
 {% block content %}
@@ -89,10 +90,8 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     </div>
     <div id="video_wrapper">
     	<div class="vid_inner">
-    	
-
-    	
-        {% if current_video.embed_code %}
+  
+    	 {% if current_video.embed_code %}
         {{ current_video.embed_code|wmode_transparent }}
         {% else %}
         {% video current_video.file_url mime_type=current_video.file_url_mimetype width=534 height=430%}
@@ -111,7 +110,10 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 	<div class="inner_content">
 
 	<div class="main">
-	
+	<br/>
+	 <a href="{{ current_video.website_url }}" id="seperate" class="med_button">
+        <span>See video on its original page</span>
+      </a>
 	<p class="description editors_notes"><span class="written_by">Jeffrey from WNYC writes:</span>WNYC 93.9 FM and AM 820 are
 							 New York's flagship public radio stations, 
 							broadcasting the finest programs from <a href="video_page.html">National Public Radio</a> and Public Radio International, 
