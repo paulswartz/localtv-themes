@@ -55,6 +55,8 @@ h2.page_title{
 .edit_link{
 text-decoration: underline;
 color: #2472b4;
+padding-left: 10px;
+font-weight: bold;
 cursor: pointer;
 }
 
@@ -1334,6 +1336,7 @@ float: right;
 
 #edit_video_wrapper form{
 float: left;
+margin-right: 100px;
 }
 
 #edit_video_wrapper h4{
@@ -1346,6 +1349,13 @@ margin: 0 0 0 0;
 padding: 0;
 width: 940px;
 margin: 0 auto;
+}
+
+
+
+#edit_video_wrapper a{
+float: left;
+padding-right: 20px;
 }
 
 
@@ -2134,4 +2144,11 @@ float: left;
 
 }
 
+
+#about.rounded{
+border: 1px solid #ddd;
+margin-top: 20px;
+padding: 20px;
+background: #eee;
+}
 
