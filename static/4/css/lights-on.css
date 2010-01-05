@@ -1876,6 +1876,9 @@ margin: 10px 20px 20px 20px;
 margin-left: 20px;
 }
 
+.inner_content #close_submit_box {
+    display: none;
+}
 
 #submit_video td{
 width: 520px;
