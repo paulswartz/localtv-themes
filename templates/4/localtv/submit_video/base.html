@@ -32,11 +32,11 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     <tr>
       <td>
       {% if request.is_ajax %}
-      <button id="close_submit_box">
+      <div id="close_submit_box">
           <span>Cancel</span>
-         </button>
+         </div>
       {% endif %}
-      <button id="submit_button" value="Submit"><span>Submit</span></button></td>
+      <button value="Submit"><span>Submit</span></button></td>
     </tr>
   </table>
   {% block post-table %}{% endblock %}
