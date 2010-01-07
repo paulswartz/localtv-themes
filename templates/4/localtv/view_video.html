@@ -114,6 +114,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 	 <a href="{{ current_video.website_url }}" id="seperate" class="med_button">
         <span>See video on its original page</span>
       </a>
+      {% comment %}
       {% if user_is_admin %}
       {% editable_widget current_video "editors_comment" %}
       {% else %}
@@ -121,6 +122,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
       {% include "localtv/inline_edit/video_editors_comment.html" %}
       {% endwith %}
       {% endif %}
+      {% endcomment %}
 
 		{% if user_is_admin %}
     {% editable_widget current_video "description" %}
