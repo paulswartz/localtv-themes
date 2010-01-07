@@ -114,18 +114,14 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 	 <a href="{{ current_video.website_url }}" id="seperate" class="med_button">
         <span>See video on its original page</span>
       </a>
-	<p class="description editors_notes"><span class="written_by">Jeffrey from WNYC writes:</span>WNYC 93.9 FM and AM 820 are
-							 New York's flagship public radio stations, 
-							broadcasting the finest programs from <a href="video_page.html">National Public Radio</a> and Public Radio International, 
-							as well as a wide range of award-winning local programming. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-							 ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-							  mollit anim id est laborum... <a href="video_page.html">Keep Reading</a></p>
+      {% if user_is_admin %}
+      {% editable_widget current_video "editors_comment" %}
+      {% else %}
+      {% with current_video as instance %}
+      {% include "localtv/inline_edit/video_editors_comment.html" %}
+      {% endwith %}
+      {% endif %}
 
-
-
-	
 		{% if user_is_admin %}
     {% editable_widget current_video "description" %}
     {% else %}
