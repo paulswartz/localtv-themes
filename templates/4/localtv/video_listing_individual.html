@@ -19,7 +19,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-{% load comments i18n localtv_thumbnail filters uploadtemplate_tags %}
+{% load comments i18n localtv_thumbnail filters uploadtemplate_tags editors_comment %}
 
 
 	<li>
@@ -42,13 +42,20 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 			<span class="posted_at">{{ video.when_prefix }} {{ video.when|simpletimesince }} ago</span>
 			
 			</div>
-			
+
+                        {% get_editors_comment for video as editors_comment %}
+                        {% if editors_comment %}
+                        <p class="description editors_notes">
+                          <span class="written_by">{{ editors_comment.user }} writes:</span>
+                          {{ editors_comment.comment }}
+                        </p>
+                        {% else %}
 			<p class="description">
 				{% autoescape off %}
 				{{ video.description|striptags }}
 				{% endautoescape %}
 			</p>
-			
+			{% endif %}
 			
 			
 			<a href="{{ video.get_absolute_url }}" class="watch_small"><span>Watch</span></a>
