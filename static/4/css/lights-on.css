@@ -45,6 +45,62 @@ h2.page_title{
 
 
 
+
+/*////////////////////////////////////////////
+
+~ Email share form
+
+////////////////////////////////////////////*/
+
+#share_form{
+padding: 30px;
+margin: 0;
+}
+
+
+#share_form ul{
+padding: 0;
+margin: 0;
+}
+
+
+#share_form ul li{
+clear: both;
+float: left;
+list-style: none;
+padding: 0;
+margin: 0 0 15px 0;
+}
+
+
+#share_form label{
+float: left;
+width: 80px;
+padding: 0;
+margin: 0;
+line-height: 1.5em;
+}
+
+
+#share_form input{
+float: right;
+}
+
+
+#id_message{
+float: none;
+clear: both;
+width: 540px;
+padding: 0;
+border: 1px solid #aaa;
+margin: 10px 0 0 0;
+}
+
+input#id_sender_email, input#id_recipient_email{
+float: left;
+width: 454px;
+}
+
 /*////////////////////////////////////////////
 
 ~ Classes
@@ -87,7 +143,7 @@ font-size: 12px;
 .editable .post_url {
     display: none;
 }
-
+ 
 .input_field{
 display: none;
 border: 3px solid;
@@ -492,6 +548,8 @@ right: 0;
 	width: 940px;
 	margin: 0 auto;
 	position: relative;
+	min-height: 350px;
+
 	background: #000;
 	}
 
@@ -795,7 +853,7 @@ border: 1px solid;
 width: 660px;
 
 margin-top: 33px;
-z-index: 99999999999996;
+z-index:999999;
 	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
 background: #333 !important;
 }
@@ -1118,13 +1176,18 @@ line-height: 1.5em;
 	}
 
 
-.inner_slider .item_details p.description{	
+.inner_slider .item_details .description{	
 	font-size: 13px;
-	line-height: 1.4em;
+	line-height: 1.4em !important;
 	margin-left: 35px;
-	height: 92px;
+	height: 112px;
+
 	overflow: hidden;
-	margin-bottom: 20px;
+padding-top: 20px;
+	}
+
+.inner_slider .item_details .description *{	
+	line-height: 1.4em !important;
 	}
 
 
@@ -1412,6 +1475,7 @@ object{
 .vid_title{
 position: relative;	
 margin-bottom: 10px;
+min-height: 2.3em;
 }
 
 

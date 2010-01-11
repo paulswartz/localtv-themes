@@ -35,7 +35,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 				<h2><a href="{{ video.get_absolute_url }}">{% trans "(no title)" %}</a></h2>
 			{% endif %}
 			
-			 
+			  
 			<span class="credits">
 				<span class="posted_by"> 
                                   {% with video as instance %}
@@ -46,7 +46,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 			</span>
 
 				
-			<p class="description">{{ video.description|sanitize }}</p>
+			<div class="description">{{ video.description|sanitize }}</div>
 		</div>
 
 		
