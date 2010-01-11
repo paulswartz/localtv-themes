@@ -17,7 +17,7 @@ You should have received a copy of the GNU Affero General Public License
 along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}
 
-{% load localtv_thumbnail i18n filters uploadtemplate_tags comments %}
+{% load localtv_thumbnail i18n filters uploadtemplate_tags comments editors_comment %}
 {% if video.has_thumbnail %}
 		<a href="{{ video.get_absolute_url }}" class="image main_thumb" style="background: #fff url({% get_thumbnail_url video 375 295 %}) 5px 5px no-repeat;">
 		{% else %}
@@ -45,8 +45,15 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 				<span class="posted_at">{{ video.when_prefix|title }} {{ video.when|simpletimesince }} ago</span>
 			</span>
 
-				
-			<div class="description">{{ video.description|sanitize }}</div>
+                        {% get_editors_comment for video as editors_comment %}
+                        {% if editors_comment %}
+                        <p class="description editors_notes">
+                          <span class="written_by">{{ editors_comment.user }} writes:</span>
+                          {{ editors_comment.comment }}
+                        </p>
+                        {% else %}
+			<p class="description">{{ video.description|sanitize }}</p>
+                        {% endif %}
 		</div>
 
 		
