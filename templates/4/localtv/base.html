@@ -155,44 +155,21 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 				<ul>
 					<li><a class="nav_home" href="{% url localtv_index %}">Home<span></span></a></li>
 					<li><a class="nav_new" href="{% url localtv_list_new %}">New Videos<span></span></a></li>
-					<li>
-						<a class="nav_cat" href="categories.html">Categories<span></span></a>
-						
-						<ul>
-							<div>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							</div>
-							
-							<div>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							</div>
-							<div>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">Categories</a></li>
-							<li><a href="#">CategoriesCategoriesCategories</a></li>
-							<li><a href="#">Categories</a></li>
-							</div>
-						</ul>
-						
-					</li>
+					
+					{% if categories %}
+
+							<li>
+								<a class="nav_cat" href="categories.html">Categories<span></span></a>
+								
+								<ul>
+									{% for category in categories %}
+										<li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+									{% endfor %}										
+								</ul>								
+							</li>
+					
+					{% endif %}
+					
 					<li><a class="nav_feat" href="{% url localtv_list_featured %}">Featured<span></span></a></li>
 					<li><a class="nav_pop" href="{% url localtv_list_popular %}">Popular<span></span></a></li>
 					{% if sitelocation.display_submit_button %}<li><a href="{% url localtv_submit_video %}" rel="#overlay">Submit</a></li>{% endif %}
@@ -232,7 +209,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
     
     
 		{% block footer_wrapper %}
-			<div id="footer">
+			<div id="footer"> 
 				<div class="local_footer">
 					{% block footer %}
 					
