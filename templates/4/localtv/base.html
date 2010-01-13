@@ -40,31 +40,6 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     </script>
     <script src="/js/extern/jquery.form.js"></script>
     <script src="{% get_static_url "js/submit_video.js" %}"></script>
-   
-   <script type="text/javascript">
-
-	$(function() { 
- 
-    // if the function argument is given to overlay, 
-    // it is assumed to be the onBeforeLoad event listener 
-    $("a[rel]").overlay({ 
- 
-        expose: '#499ad9', 
-        effect: 'apple', 
- 
-        onBeforeLoad: function() {
-            wrap = this;
-            $.get(this.getTrigger().attr("href"),
-                  function(result){setup_submit_callbacks(wrap, result);});
-        } 
- 
-	    }); 
-	});
-		
-
-		</script>
-
-
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 
 sfHover = function() {
