@@ -18,7 +18,7 @@ You should have received a copy of the GNU Affero General Public License
 along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}
 
-{% load localtv_thumbnail %}
+{% load localtv_thumbnail cache %}
 {% load comments filters uploadtemplate_tags %}
 {% block body_id %}home_page{% endblock %}
 {% block body_class %}scrolling{% endblock %}
@@ -143,6 +143,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 				</div>
 				
 				<ul>
+                                  {% cache 3600 index_blue_popular %}{# one hour #}
                                   {% for video in popular_videos|slice:":8" %}
                                   <li>
                                     <span class="count">{{ forloop.counter }}</span>
@@ -160,6 +161,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
                                     </div>
                                   </li>
                                   {% endfor %}
+                                  {% endcache %}
 				</ul>
 				
 				
