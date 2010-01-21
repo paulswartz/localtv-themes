@@ -108,6 +108,10 @@ width: 454px;
 ////////////////////////////////////////////*/
 
 
+.floatright{
+float: right;
+}
+
 .edit_link{
 text-decoration: underline;
 color: #2472b4;
@@ -1390,6 +1394,14 @@ div.contentWrap {
 padding: 15px 0 10px 0;
 border-bottom: 1px solid #ddd;
 font-size: 12px;
+width: 100% !important;
+}
+
+#edit_video_wrapper #edit_video_wrapper_inner {
+padding: 15px 0 10px 0;
+font-size: 12px;
+width: 940px !important;
+margin: 0 auto;
 }
 
 #edit_video_wrapper .moderate{
@@ -2178,12 +2190,22 @@ color: #aaa;
 background-position: left -69px;
 }
 
-#author_page #category_sidebar{
+#author_page #category_sidebar, #category_page #category_sidebar{
 width: 270px;
 float: left;
 padding-top: 30px;
 font-size: 13px;
 margin-right: 20px;
+}
+
+#category_page #category_info h1{
+margin: 0 0 10px !important;
+}
+
+
+#category_page #category_info .rss{
+margin: 9px 20px 0 0;
+font-size: 11px;
 }
 
 
@@ -2192,10 +2214,19 @@ width: 270px;
 }
 
 
-#author_page #category_main{
+#author_page #category_main, #category_page #category_main{
 width: 650px;
 float: left;
 
+}
+
+
+#category{
+float: left;
+}
+
+#category .vid_list li{
+margin: 0;
 }
 
 
@@ -2205,4 +2236,55 @@ margin-top: 20px;
 padding: 20px;
 background: #eee;
 }
+
+#subcategory_sidebar ul{
+padding-left: 13px;
+}
+
+
+/*////////////////////////////////////////////
+
+~ Categories Page
+
+////////////////////////////////////////////*/
+
+h2.page_title{
+margin: 0;
+float: left;
+width: 200px;
+padding-top: 26px;
+}
+
+dl.cat_list{
+width: 710px;
+float: left;
+float: right;
+}
+
+dl.cat_list dl{
+width: 710px;
+}
+
+
+dl.cat_list dt{
+width: 710px;
+font-weight: bold;
+margin-top: 10px;
+padding-bottom: 5px;
+}
+
+dl.cat_list dt span.amount{
+color: #777 !important;
+font-weight: normal;
+font-size: 12px;
+}
+
+dl.cat_list dd{
+font-size: 12px;
+width: 710px;
+padding: 0;
+margin: 0 0 10px;
+float: left;
+}
+
 

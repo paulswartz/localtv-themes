@@ -134,7 +134,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 					{% if categories %}
 
 							<li>
-								<a class="nav_cat" href="categories.html">Categories<span></span></a>
+								<a class="nav_cat" href="{% url localtv_category_index %}">Categories<span></span></a>
 								
 								<ul>
 									{% for category in categories %}
@@ -189,7 +189,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 					{% block footer %}
 					
 						{% autoescape off %}
-						{{ sitelocation.footer_html }}
+							{{ sitelocation.footer_html }}
 						{% endautoescape %}
 					
 					
