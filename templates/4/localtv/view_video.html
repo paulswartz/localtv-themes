@@ -243,7 +243,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     <div id="sidebar_header">
     
     {% if category %}
-    {% cache 3600 view_video_blue_category_popular category %}
+    {% cache 3600 view_video_blue_category_popular sitelocation category %}
     <div class="heading">
       <h2>{{ category.name }}</h2>
       {% url localtv_feeds_category category.slug as category_rss %}
@@ -258,7 +258,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     {% endfor %}
     {% endcache %}
     {% else %}
-    {{% cache 3600 view_video_blue_popular %}
+    {{% cache 3600 view_video_blue_popular sitelocation %}
     <div class="heading">
       <h2>Most Popular</h2>
       {% url localtv_feeds_popular as popular_rss %}
