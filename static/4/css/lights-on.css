@@ -1318,12 +1318,12 @@ a.disabled {
 /* position and dimensions of the navigator */
 .navi {
 	float: right;
-	padding-top:29px;
 	position: relative;
+        top: 29px;
 	height:20px;
 	width: 360px;
 	background: #fdfdfd;
-	z-index: 10000;
+	z-index: 1;
 	}
 
 /* items inside navigator */
