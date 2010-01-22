@@ -1514,12 +1514,15 @@ min-height: 2.3em;
 	}
 
 
-.video_meta div.vid_author .posted_by{
+.video_meta div.vid_author .posted_by, .video_meta div.vid_author .posted_at {
 float: left;
 display: inline !important;
 font-size: 12px;
+color: black;
 }
-
+.video_meta div.vid_author .posted_at {
+    margin-right: 8px;
+}
 .video_meta div p{
 	display: inline;
 	margin: 0;

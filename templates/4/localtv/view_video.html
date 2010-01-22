@@ -80,6 +80,17 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
           {% endwith %}
           {% endif %}
         </div>
+        <div class="posted_at">
+          {% if user_is_admin %}
+          {% editable_widget current_video "when_published" %}
+          {% else %}
+          {% with current_video as instance %}
+          {% filter lower %}
+          {% include "localtv/inline_edit/video_when_published.html" %}
+          {% endfilter %}
+          {% endwith %}
+          {% endif %}
+        </div>
         <a href="#comments" class="comments_link">{{ comment_count }} Comment{{ comment_count|pluralize }}</a>
       </div>
       
