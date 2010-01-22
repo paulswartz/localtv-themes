@@ -65,6 +65,8 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
   </head>
   {% endif %}
   <body id="{% block body_id %}video_page{% endblock body_id %}" class="{% block body_class %}{% endblock %}">
+    {% block next_link %}<a id="{{ request.path }}"></a>{% endblock %}
+
     {% if not request.is_ajax %}
     
     
