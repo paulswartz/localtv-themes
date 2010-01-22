@@ -23,7 +23,11 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 
 
 	<li>
+          {% if video.has_thumbnail %}
 		<a href="{{ video.get_absolute_url }}" class="image med_thumb" style="background: url({% get_thumbnail_url video 222 169 %}) 5px 5px no-repeat;">
+          {% else %}
+		<a href="{{ video.get_absolute_url }}" class="image med_thumb" style="background: url({% get_static_url "/images/default_big.jpg" %}) center center no-repeat;">
+          {% endif %}
                   {% get_comment_count for video as comment_count %}
                   {% if comment_count %}<span class="comments_overlay"><span>{{ comment_count }} Comment{{ comment_count.pluralize }}</span></span>{% endif %}
                 </a>

@@ -21,8 +21,11 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 
 <li>
 						<span class="count">{{ forloop.counter }}</span>
-
-  <a href="{{ video.get_absolute_url }}" class="image small_thumb" style="background: url({% get_thumbnail_url video 88 68 %}) no-repeat;">
+{% if video.has_thumbnail %}
+  <a href="{{ video.get_absolute_url }}" class="image small_thumb" style="background: url({% get_thumbnail_url video 88 68 %}) 3px 3px no-repeat;">
+{% else %}
+  <a href="{{ video.get_absolute_url }}" class="image small_thumb" style="background: url({% get_static_url "/images/default_vid.gif" %}) center center no-repeat;">
+  {% endif %}
     {% get_comment_count for video as comment_count %}
     {% if comment_count %}<span class="comments_overlay"><span>{{ comment_count }}</span></span>{% endif %}
   </a>
