@@ -1,9 +1,9 @@
 function setup_submit_callbacks(wrap, result) {
-    next_link = $(result).find("a#next");
-    if (next_link.length) {
-        location.href = next_link.attr('href');
+    page = $(result);
+    if (page.filter('#next').length) {
+        location.href = page.filter('#next').attr('href');
         return;
-    }
+    };
     wrap.getContent().find('.contentWrap').html(result).find('form:eq(0)').ajaxForm(
         function(result){setup_submit_callbacks(wrap, result);});
 }
