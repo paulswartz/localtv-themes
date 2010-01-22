@@ -258,7 +258,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     {% endfor %}
     {% endcache %}
     {% else %}
-    {{% cache 3600 view_video_blue_popular sitelocation %}
+    {% cache 3600 view_video_blue_popular sitelocation %}
     <div class="heading">
       <h2>Most Popular</h2>
       {% url localtv_feeds_popular as popular_rss %}
