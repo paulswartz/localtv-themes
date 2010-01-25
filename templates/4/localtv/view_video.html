@@ -122,9 +122,11 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 
 	<div class="main">
 	<br/>
+        {% if current_video.website_url %}
 	 <a href="{{ current_video.website_url }}" id="seperate" class="med_button">
         <span>See video on its original page</span>
       </a>
+      {% endif %}
       {% if user_is_admin %}
       {% editable_widget current_video "editors_comment" %}
       {% else %}
