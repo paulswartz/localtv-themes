@@ -62,6 +62,35 @@ h2.page_title{
     background: url(../images/load-indicator-bg.png);
 }
 
+/* Icons for various places */
+
+    .reject_video{
+padding-left: 18px;
+background: url(../images/small_icons.png) left -32px no-repeat;
+}
+
+.unfeature_video{
+padding-left: 18px;
+background: url(../images/small_icons.png) left -238px no-repeat;
+}
+
+.approve_video{
+padding-left: 18px;
+background: url(../images/small_icons.png) left -90px no-repeat;
+}
+
+.feature_video{
+padding-left: 18px;
+background: url(../images/small_icons.png) left -157px no-repeat;
+}
+
+.thumbnail_icon{
+padding-left: 23px;
+background: url(../images/small_icons.png) left -199px no-repeat;
+}
+
+
+
 
 /*////////////////////////////////////////////
 
@@ -1377,7 +1406,7 @@ float: left;
 
 
 /* use a semi-transparent image for the overlay */ 
-#overlay { 
+#overlay, .simple_overlay { 
 	background:#efefef;
 	width: 600px;
     color:#efefef; 
@@ -1407,17 +1436,23 @@ div.contentWrap {
 ////////////////////////////////////////////*/
 
 #edit_video_wrapper{
-padding: 15px 0 10px 0;
 border-bottom: 1px solid #ddd;
+background: #555 url(../images/bg_vid.png) center no-repeat;
 font-size: 12px;
 width: 100% !important;
+
 }
 
 #edit_video_wrapper #edit_video_wrapper_inner {
-padding: 15px 0 10px 0;
+height: 3em;
+background: #000;
 font-size: 12px;
 width: 940px !important;
 margin: 0 auto;
+}
+
+#edit_video_wrapper #edit_video_wrapper_inner p{
+float: right;
 }
 
 #edit_video_wrapper .moderate{
@@ -2304,6 +2339,114 @@ width: 710px;
 padding: 0;
 margin: 0 0 10px;
 float: left;
+}
+
+
+
+/*////////////////////////////////////////////
+
+~ Thumbnail Changer
+
+////////////////////////////////////////////*/
+
+
+#thumbnail_changer.simple_overlay {
+padding: 20px;
+height: 235px !important;
+}
+
+
+#thumbnail_changer.simple_overlay  h2{
+margin: 0 0 15px 0;
+padding: 0;
+color: #000 !important;
+}
+
+
+
+#thumbnail_changer.simple_overlay .image.med_thumb{
+padding-top: 170px;
+padding-bottom: 0;
+height: 30px;
+color: #000;
+font-size: 11px;
+text-align: center;
+float: left;
+}
+
+
+#thumbnail_changer.simple_overlay .image.med_thumb h3{
+color: #777;
+font-size: 10px;
+font-weight: normal !important;
+text-align: center;
+}
+
+
+#thumbnail_changer.simple_overlay form{
+width: 330px;
+float: left;
+color: #000;
+clear: none;
+text-align: left !important;
+margin: 0 0 0 10px;
+padding-left: 15px;
+}
+
+
+#thumbnail_changer.simple_overlay form p{
+width: 330px;
+float: left;
+color: #000;
+clear: none;
+text-align: left !important;
+margin: 0 0 0 35px;
+height: 6em;
+}
+
+
+
+#thumbnail_changer.simple_overlay form p label{
+width: 100px;
+font-weight: bold;
+float: left;
+color: #000;
+display: block;
+line-height: 2em;
+text-align: left !important;
+width: 330px;
+}
+
+
+#thumbnail_changer.simple_overlay #id_thumbnail_url{
+width: 300px;
+float: left;
+color: #000;
+padding: 4px 0 4px 4px;
+clear: none;
+line-height: 2em;
+text-align: left !important;
+}
+
+
+
+#thumbnail_changer.simple_overlay .more_large{
+margin: 22px 0 0 0;
+background-position: 0 1px !important; 
+cursor: pointer;
+}
+
+
+
+#thumbnail_changer.simple_overlay .more_large span{
+background-position: 130px 11px !important; 
+}
+
+
+
+#home_page ul.vid_list object, #home_page ul.vid_list embed{
+width: 640px;
+height: 515px;
 }
 
 

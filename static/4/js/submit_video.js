@@ -14,9 +14,11 @@ $(document).ready(function() {
         effect: 'apple',
 
         onBeforeLoad: function() {
-            wrap = this;
-            $.get(this.getTrigger().attr("href"),
-                  function(result){setup_submit_callbacks(wrap, result);});
+            if (this.getTrigger().attr("href") != "#") {
+                wrap = this;
+                $.get(this.getTrigger().attr("href"),
+                      function(result){setup_submit_callbacks(wrap, result);});
+            }
         }
     });
 }).ajaxStart(function() {
