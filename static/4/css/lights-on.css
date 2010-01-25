@@ -15,15 +15,15 @@ body{
 a{
 
 	color: #2472b4;
-	
-	
-	}  
+
+
+	}
 
 /* get rid of those system borders being generated for A tags */
 a:active {
 	outline:none;
 	}
- 
+
 :focus {
 	-moz-outline-style:none;
 	}
@@ -42,7 +42,6 @@ h2.page_title{
 	float: left;
 	font-size: 14px;
 	}
-
 
 /* Load indicator */
 
@@ -193,7 +192,7 @@ font-size: 12px;
 .editable .post_url {
     display: none;
 }
- 
+
 .input_field{
 display: none;
 border: 3px solid;
@@ -295,7 +294,7 @@ right: 0;
 	padding: 0 0px 17px 0px;
 	height: 94px;
 	background: url(../images/twitter.png) top left no-repeat;
-	width: 155px !important;	
+	width: 155px !important;
 }
 
 .tweet_up a{
@@ -345,17 +344,17 @@ right: 0;
 	}
 
 .close{
-	background:url(../images/close.png) no-repeat; 
-    position:absolute; 
-    right:-15px; 
-    top:-15px; 
-    cursor:pointer; 
-    height:32px; 
-    width:31px; 
+	background:url(../images/close.png) no-repeat;
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:32px;
+    width:31px;
 	}
 
 .close:hover{
-  background:url(../images/close.png) 0 -40px no-repeat; 
+  background:url(../images/close.png) 0 -40px no-repeat;
 	}
 
 .posted_by{
@@ -385,7 +384,7 @@ right: 0;
 	min-height: 24px;
 	margin: 0px 0 15px 0;
 	border-bottom: 1px solid #ddd;
-	padding: 30px 0 0 0;	
+	padding: 30px 0 0 0;
 	}
 
 .heading h2{
@@ -444,12 +443,12 @@ right: 0;
 	line-height: 1em;
 	background: url(../images/watch_arrows.gif) 67px 11px no-repeat;
 	}
-	
+
 .watch_large:hover{
 	border: 1px solid #000;
 	background: #56c352 url(../images/watch.gif) 0 -37px;
 	}
-	
+
 .watch_small{
 	display: block;
 	float: left;
@@ -471,15 +470,15 @@ right: 0;
 	line-height: 1em;
 	background: url(../images/watch_arrows.gif) 58px -16px no-repeat;
 	}
-	
+
 .watch_small:hover{
 	border: 1px solid #000;
 	background: #56c352 url(../images/watch.gif) 0 -36px;
 
-	}	
-	
-	
-	
+	}
+
+
+
 .more_large{
 	display: block;
 	float: right;
@@ -491,7 +490,7 @@ right: 0;
 	line-height: 1em;
 	border: 1px solid #448642;
 	background: #56c352 url(../images/watch.gif) 0 -5px repeat-x;
-	
+
 		background: #56c352 url(../images/watch.gif) 0 -5px repeat-x;
 
 	}
@@ -507,12 +506,12 @@ right: 0;
 	line-height: 1em;
 	background: url(../images/watch_arrows.gif) 110px 11px no-repeat;
 	}
-	
+
 .more_large:hover{
 	border: 1px solid #000;
 	background: #56c352 url(../images/watch.gif) 0 -37px;
 	}
-		
+
 
 .more_large.post_comment{
 	margin-right: 0px;
@@ -543,16 +542,16 @@ right: 0;
 	clear: both;
 	}
 
-.item_details h2 a{	
-	
+.item_details h2 a{
+
 	text-decoration: none;
 
 	}
 
-.item_details h2 a:hover{	
+.item_details h2 a:hover{
 	text-decoration: underline;
 	}
-	
+
 
 .editors{
 	background: #f4f6f8;
@@ -563,14 +562,14 @@ right: 0;
 	}
 
 
-.vid_list .item_details{	
+.vid_list .item_details{
 	width:390px;
 
 	float: left;
 	}
 
 
-.vid_list .item_details h2{	
+.vid_list .item_details h2{
 	clear: both;
 	font-size: 15px;
 	margin: 0px 0 10px 35px;
@@ -579,14 +578,14 @@ right: 0;
 
 
 
-.vid_list .item_details .credits, .inner_slider .item_details .credits{	
+.vid_list .item_details .credits, .inner_slider .item_details .credits{
 	font-size: 11px;
 	margin-left: 35px;
 	text-transform: uppercase;
 
 	}
 
-.vid_list .item_details p.description{	
+.vid_list .item_details p.description{
 	font-size: 12px;
 	line-height: 1.5em;
 	margin-left: 35px;
@@ -607,7 +606,7 @@ right: 0;
 ~ Thumbnails
 ------------------------------------------*/
 
-.main_thumb{	
+.main_thumb{
 	height: 295px;
 	text-decoration: none;
 	width:375px;
@@ -615,7 +614,7 @@ right: 0;
 	float: left;
 	}
 
-.main_thumb:hover{	
+.main_thumb:hover{
 	border-color: #000;
 	}
 
@@ -625,7 +624,7 @@ right: 0;
 	width: 368px;
 	}
 
-.med_thumb{	
+.med_thumb{
 	position: relative;
 	height: 169px;
 	width:222px;
@@ -633,7 +632,7 @@ right: 0;
 	float: left;
 	}
 
-.med_thumb:hover{	
+.med_thumb:hover{
 	border-color: #000;
 	}
 
@@ -644,7 +643,7 @@ right: 0;
 	padding: 6px 6px 4px 0;
 	}
 
-.small_thumb{	
+.small_thumb{
 	position: relative;
 	height: 68px;
 	width:88px;
@@ -653,7 +652,7 @@ right: 0;
 	padding: 3px;
 	}
 
-.small_thumb:hover{	
+.small_thumb:hover{
 	border-color: #000;
 	}
 
@@ -668,13 +667,13 @@ right: 0;
 /*-----------------------------------------
 ~ Comments Overlay
 ------------------------------------------*/
-	
+
 .comments_overlay{
 	font-weight: bold;
 	text-align: right;
 	color: #fff;
 	font-size: 11px;
-	padding: 6px 6px 6px 0;	
+	padding: 6px 6px 6px 0;
 
 	background: url(../images/comments_overlay.png);
 
@@ -703,7 +702,7 @@ right: 0;
 	padding-right: 16px;
 	background: url(../images/comment_bubble.gif) right -28px no-repeat;
 	}
-	
+
 
 /*////////////////////////////////////////////
 
@@ -730,11 +729,11 @@ right: 0;
 	margin: 0;
 		float: left;
 	width: 100%;
-	
 
-	
+
+
 		border-bottom: 1px solid #1a4d83;
-	
+
 
 
 	}
@@ -1073,7 +1072,7 @@ background: url(../images/bg_content.png) 0 1px repeat-x;
 	width: 640px;
 	margin: 0 auto;
 	float: left;
-	margin-right: 20px;	
+	margin-right: 20px;
 }
 
 
@@ -1108,27 +1107,27 @@ color: #ccc;
 float: right;
 	}
 
-.sidebar .item_details{	
+.sidebar .item_details{
 	width:130px;
 	float: left;
 	margin-left: 17px;
 	}
-	
-.sidebar ul h2{	
+
+.sidebar ul h2{
 	font-size: 12px;
 	margin: 0;
 	height: 58px;
 	overflow: hidden;
 	}
-	
-.sidebar ul h2{	
+
+.sidebar ul h2{
 	font-size: 12px;
 	margin: 0 0 8px 0;
 	height: 44px;
 	overflow: hidden;
 	}
-	
-.sidebar .item_details .credits{	
+
+.sidebar .item_details .credits{
 	font-size: 11px;
 	font-weight: bold;
 	margin-left: 0px;
@@ -1140,9 +1139,9 @@ float: right;
 	text-transform: uppercase;
 	font-size: 13px;
 	margin: 0px;
-	height: 1em;	
+	height: 1em;
 	padding-bottom: 15px;
-	border-bottom: 1px solid #bbb; 
+	border-bottom: 1px solid #bbb;
 	}
 
 .recent_comments{
@@ -1190,7 +1189,7 @@ line-height: 1.5em;
 
 .inner_slider{
 	width: 940px;
-	margin: 0 auto;	
+	margin: 0 auto;
 	height: 360px;
 	}
 
@@ -1211,13 +1210,13 @@ line-height: 1.5em;
 	margin: 0;
 	}
 
-.inner_slider .item_details{	
+.inner_slider .item_details{
 	height: 273px;
 		width:550px;
 	float: left;
 	}
 
-.inner_slider .item_details h2{	
+.inner_slider .item_details h2{
 	clear: both;
 	font-size: 18px;
 	margin: 55px 0 10px 35px;
@@ -1225,7 +1224,7 @@ line-height: 1.5em;
 	}
 
 
-.inner_slider .item_details .description{	
+.inner_slider .item_details .description{
 	font-size: 13px;
 	line-height: 1.4em !important;
 	margin-left: 35px;
@@ -1235,7 +1234,7 @@ line-height: 1.5em;
 padding-top: 20px;
 	}
 
-.inner_slider .item_details .description *{	
+.inner_slider .item_details .description *{
 	line-height: 1.4em !important;
 	}
 
@@ -1284,7 +1283,7 @@ padding-top: 20px;
 	padding:0px;
 	cursor:pointer;
 	width:960px;
-	height: 300px;	
+	height: 300px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	}
@@ -1296,7 +1295,7 @@ padding-top: 20px;
 	position:relative;
 	}
 
- 
+
 
 
 /* prev, next, prevPage and nextPage buttons */
@@ -1314,17 +1313,17 @@ a.browse {
 /* right */
 a.right { background-position: 0 -30px; clear:right; margin-right: 0px;}
 a.right:hover 	{ background-position:-30px -30px; }
-a.right:active 	{ background-position:-60px -30px; } 
+a.right:active 	{ background-position:-60px -30px; }
 
 
 /* left */
-a.left				{ margin-left: 0px; } 
+a.left				{ margin-left: 0px; }
 a.left:hover  		{ background-position:-30px 0; }
 a.left:active  	{ background-position:-60px 0; }
 
 /* up and down */
-a.up, a.down		{ 
-	background:url(../img/scrollable/arrow/vert_large.png) no-repeat; 
+a.up, a.down		{
+	background:url(../img/scrollable/arrow/vert_large.png) no-repeat;
 	float: none;
 	margin: 10px 50px;
 	}
@@ -1336,13 +1335,13 @@ a.up:active  		{ background-position:-60px 0; }
 /* down */
 a.down 				{ background-position: 0 -30px; }
 a.down:hover  		{ background-position:-30px -30px; }
-a.down:active  	{ background-position:-60px -30px; } 
+a.down:active  	{ background-position:-60px -30px; }
 
 
 /* disabled navigational button */
 a.disabled {
-	visibility:hidden !important;		
-} 	
+	visibility:hidden !important;
+}
 
 /* position and dimensions of the navigator */
 .navi {
@@ -1367,12 +1366,12 @@ a.disabled {
 
 /* mouseover state */
 .navi a:hover {
-	background-position:0 -14px;      
+	background-position:0 -14px;
 }
 
 /* active state (current page state) */
 .navi a.active {
-	background-position:0 -28px;     
+	background-position:0 -28px;
 }
 
 
@@ -1391,7 +1390,7 @@ float: left;
 
 #video_listing_new ul.vid_list .item_details,
 #video_listing_featured ul.vid_list .item_details,
-#video_listing_popular ul.vid_list .item_details{	
+#video_listing_popular ul.vid_list .item_details{
 	width:696px;
 	float: left;
 	}
@@ -1405,26 +1404,26 @@ float: left;
 ////////////////////////////////////////////*/
 
 
-/* use a semi-transparent image for the overlay */ 
-#overlay, .simple_overlay { 
+/* use a semi-transparent image for the overlay */
+#overlay, .simple_overlay {
 	background:#efefef;
 	width: 600px;
-    color:#efefef; 
-    height:400px; 
+    color:#efefef;
+    height:400px;
     padding: 10px;
     display: none;
     border: 1px solid #225d84;
-     
-    /* CSS3 styling for latest browsers */ 
-    -moz-box-shadow:0 0 30px 5px #3476a1; 
-    -webkit-box-shadow: 0 0 90px #000;     
-} 
- 
-/* container for external content. uses vertical scrollbar, if needed */ 
-div.contentWrap { 
-    height:400px; 
+
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 30px 5px #3476a1;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+
+/* container for external content. uses vertical scrollbar, if needed */
+div.contentWrap {
+    height:400px;
     background: #fff;
-    overflow-y:auto; 
+    overflow-y:auto;
 }
 
 
@@ -1536,7 +1535,7 @@ object{
 }
 
 .vid_title{
-position: relative;	
+position: relative;
 margin-bottom: 10px;
 min-height: 2.3em;
 }
@@ -1625,7 +1624,7 @@ margin-bottom: 10px;
 #view_video .sidebar .small_vid_list{
 	width: 400px;
 	margin: 0;
-	
+
 	}
 
 #view_video .sidebar .small_vid_list li{
@@ -1644,7 +1643,7 @@ margin-bottom: 10px;
 #view_video .sidebar .small_vid_list .item_details h2{
 	margin-left: 0;
 	}
-	
+
 
 
 
@@ -1654,7 +1653,7 @@ margin-bottom: 10px;
 	border-top: 0;
 	}
 
- 
+
 .share_box .share_links{
 	width: 180px;
 	float: left;
@@ -1849,7 +1848,7 @@ padding: 0px;
 }
 
 .post_comment span{
-background-position: 130px 11px !important; 
+background-position: 130px 11px !important;
 }
 
 
@@ -1964,7 +1963,7 @@ height: 1.2em;
 
 
 .post_comment span{
-background-position: 130px 11px !important; 
+background-position: 130px 11px !important;
 }
 
 
@@ -1976,26 +1975,26 @@ background-position: 130px 11px !important;
 ////////////////////////////////////////////*/
 
 
-/* use a semi-transparent image for the overlay */ 
-#overlay { 
+/* use a semi-transparent image for the overlay */
+#overlay {
 	background:#efefef;
 	width: 600px;
-    color:#333 !important; 
-    height:400px; 
+    color:#333 !important;
+    height:400px;
     padding: 10px;
     display: none;
     border: 1px solid #225d84;
-     
-    /* CSS3 styling for latest browsers */ 
-    -moz-box-shadow:0 0 30px 5px #3476a1; 
-    -webkit-box-shadow: 0 0 90px #000;     
-} 
- 
-/* container for external content. uses vertical scrollbar, if needed */ 
-div.contentWrap { 
-    height:400px; 
+
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 30px 5px #3476a1;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+
+/* container for external content. uses vertical scrollbar, if needed */
+div.contentWrap {
+    height:400px;
     background: #fff;
-    overflow-y:auto; 
+    overflow-y:auto;
 }
 
 
@@ -2432,21 +2431,12 @@ text-align: left !important;
 
 #thumbnail_changer.simple_overlay .more_large{
 margin: 22px 0 0 0;
-background-position: 0 1px !important; 
+background-position: 0 1px !important;
 cursor: pointer;
 }
 
 
 
 #thumbnail_changer.simple_overlay .more_large span{
-background-position: 130px 11px !important; 
+background-position: 130px 11px !important;
 }
-
-
-
-#home_page ul.vid_list object, #home_page ul.vid_list embed{
-width: 640px;
-height: 515px;
-}
-
-
