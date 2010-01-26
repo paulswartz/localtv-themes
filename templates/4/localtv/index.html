@@ -113,20 +113,20 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
   <div class="main">  
     <div class="heading">
       <h2>Today's Picks</h2>
-        {% url localtv_feeds_featured as feeds_featured %}
-        <a href="{{ feeds_featured }}" class="rss">RSS</a>
-        <a href="http://subscribe.getmiro.com/?url1=http%3A//{{ sitelocation.site.domain|urlencode }}{{ feeds_featured|urlencode }}" class="subscribe">Subscribe</a>
+        {% url localtv_feeds_new as feeds_new %}
+        <a href="{{ feeds_new }}" class="rss">RSS</a>
+        <a href="http://subscribe.getmiro.com/?url1=http%3A//{{ sitelocation.site.domain|urlencode }}{{ feeds_new|urlencode }}" class="subscribe">Subscribe</a>
     </div>
     
     
     	<ul class="vid_list">
 
-    {% for video in featured_videos|slice:"3:8" %}
+    {% for video in new_videos|slice:":5" %}
       {% include "localtv/video_listing_individual.html" %}
     {% endfor %}
     	</ul>
 
-								<a href="{% url localtv_list_featured %}" class="more_large"><span>See 10 More</span></a>
+								<a href="{% url localtv_list_new %}" class="more_large"><span>See 10 More</span></a>
   
   </div>
 
