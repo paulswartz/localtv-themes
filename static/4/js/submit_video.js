@@ -9,6 +9,7 @@ function setup_submit_callbacks(wrap, result) {
 }
 
 $(document).ready(function() {
+    $('#nav li.categories').css('cursor', 'default').click(function() {return false;});
     $("a[rel]").overlay({
         expose: '#499ad9',
         effect: 'apple',
