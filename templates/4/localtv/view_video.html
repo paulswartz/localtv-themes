@@ -19,7 +19,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}
 
 
-{% load video i18n comments filters uploadtemplate_tags editable_widget localtv_thumbnail tweets email_share_tags cache %}
+{% load video i18n comments filters uploadtemplate_tags editable_widget localtv_thumbnail tweets email_share_tags cache video_list %}
 
 {% block body_id %}view_video{% endblock %}
 
@@ -256,30 +256,30 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     <div id="sidebar_header">
     
     {% if category %}
-    {% cache 3600 view_video_blue_category_popular sitelocation category %}
+    {% cache 3600 view_video_blue_category_new sitelocation category %}
     <div class="heading">
       <h2>{{ category.name }}</h2>
       {% url localtv_feeds_category category.slug as category_rss %}
       <a href="{{ category_rss }}" class="rss">RSS</a>
       <a href="http://subscribe.getmiro.com/?url1=http%3A//{{ sitelocation.site.domain|urlencode }}{{ category_rss|urlencode }}" class="subscribe">Subscribe</a>
     </div>
-
-    {% for video in popular_videos|slice:":9" %}
+    {% get_video_list_for_category category as new_videos %}
+    {% for video in new_videos|slice:":9" %}
     <ul class="small_vid_list">
     {% include "localtv/sidebar_video.html" %}
     </ul>
     {% endfor %}
     {% endcache %}
     {% else %}
-    {% cache 3600 view_video_blue_popular sitelocation %}
+    {% cache 3600 view_video_blue_new sitelocation %}
     <div class="heading">
-      <h2>Most Popular</h2>
-      {% url localtv_feeds_popular as popular_rss %}
-      <a href="{{ popular_rss }}" class="rss">RSS</a>
-      <a href="http://subscribe.getmiro.com/?url1=http%3A//{{ sitelocation.site.domain|urlencode }}{{ popular_rss|urlencode }}" class="subscribe">Subscribe</a>
+      <h2>New Videos</h2>
+      {% url localtv_feeds_new as new_rss %}
+      <a href="{{ new_rss }}" class="rss">RSS</a>
+      <a href="http://subscribe.getmiro.com/?url1=http%3A//{{ sitelocation.site.domain|urlencode }}{{ new_rss|urlencode }}" class="subscribe">Subscribe</a>
     </div>
-
-    {% for video in popular_videos|slice:":9" %}
+    {% get_video_list_new as new_videos %}
+    {% for video in new_videos|slice:":9" %}
     <ul class="small_vid_list">
       {% include "localtv/sidebar_video.html" %}
     </ul>
