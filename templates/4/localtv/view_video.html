@@ -135,18 +135,18 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
       {% endwith %}
       {% endif %}
 
-		{% if user_is_admin %}
-    {% editable_widget current_video "description" %}
-    {% else %}
-    		<div class="heading">
+      {% if user_is_admin %}
+      {% editable_widget current_video "description" %}
+      {% else %}
+      {% if current_video.description %}
+      <div class="heading">
+        <h2 id="comments">Description</h2>
+      </div>
 
-				<h2 id="comments">Description</h2>
-
-			</div>
-
-    <div class="description">
-      {{ current_video.description|sanitize }}
-    </div>
+      <div class="description">
+        {{ current_video.description|sanitize }}
+      </div>
+      {% endif %}
     {% endif %}
     {% if comment_count %}<div class="heading"><h2 class="comments-title">{{ comment_count }} Comment{{ comment_count|pluralize }}</h2></div>{% endif %}
     {% get_comment_list for current_video as comments %}
