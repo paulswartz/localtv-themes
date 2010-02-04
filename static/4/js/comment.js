@@ -14,7 +14,11 @@ function comment_load(response) {
         }
         wrap = $("#overlay").overlay({api: true,
                                          onClose: comment_close});
-        wrap.getContent().find('form:eq(0)').ajaxForm({success: comment_load});
+        wrap.getContent().find('form:eq(0)').submit(function() {
+            if (typeof tinyMCE != 'undefined') {
+                console.log('triggering save');
+                tinyMCE.triggerSave();
+            }}).ajaxForm({success: comment_load});
         wrap.load();
     }
 }
@@ -29,5 +33,9 @@ function comment_close() {
     }
 }
 $(document).ready(function() {
-    $(".comment_form form").ajaxForm(comment_load);
+    $(".comment_form form").submit(function() {
+        if (typeof tinyMCE != 'undefined') {
+            console.log('triggering save');
+            tinyMCE.triggerSave();
+        }}).ajaxForm({success: comment_load});
 });
