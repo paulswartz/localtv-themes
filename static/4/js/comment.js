@@ -1,11 +1,11 @@
 function comment_load(response) {
     response = $(response);
-    if (response.children('#next').length) {
-        location.href = response.children('#next').attr('href');
+    if (response.filter('#next').length) {
+        location.href = response.filter('#next').attr('href');
     } else {
         response.find('script').remove();
         $("#overlay").find('.contentWrap').html(response);
-        if (typeof Recaptcha != 'undefined') {
+        if ($("input[name=recaptcha_ip_field]").length) {
             recaptcha_url = $('script[src^=http://api.recaptcha.net/challenge]').attr('src');
             recaptcha_key = /k=(\w*)/.exec(recaptcha_url)[1];
             recaptcha_wrapper = document.createElement('div');
@@ -14,13 +14,13 @@ function comment_load(response) {
         }
         wrap = $("#overlay").overlay({api: true,
                                          onClose: comment_close});
-        wrap.getContent().find('form:eq(0)').ajaxForm(comment_load);
+        wrap.getContent().find('form:eq(0)').ajaxForm({success: comment_load});
         wrap.load();
     }
 }
 function comment_close() {
     $("#overlay .contentWrap").empty();
-    if (typeof Recaptcha != 'undefined') {
+    if ($("input[name=recaptcha_ip_field]").length) {
         recaptcha_url = $('script[src^=http://api.recaptcha.net/challenge]').attr('src');
         recaptcha_key = /k=(\w*)/.exec(recaptcha_url)[1];
         recaptcha_wrapper = document.createElement('div');
