@@ -16,7 +16,6 @@ function comment_load(response) {
                                          onClose: comment_close});
         wrap.getContent().find('form:eq(0)').submit(function() {
             if (typeof tinyMCE != 'undefined') {
-                console.log('triggering save');
                 tinyMCE.triggerSave();
             }}).ajaxForm({success: comment_load});
         wrap.load();
@@ -35,7 +34,6 @@ function comment_close() {
 $(document).ready(function() {
     $(".comment_form form").submit(function() {
         if (typeof tinyMCE != 'undefined') {
-            console.log('triggering save');
             tinyMCE.triggerSave();
         }}).ajaxForm({success: comment_load});
 });
