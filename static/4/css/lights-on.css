@@ -2438,3 +2438,10 @@ cursor: pointer;
 #thumbnail_changer.simple_overlay .more_large span{
 background-position: 130px 11px !important;
 }
+
+.embed-warning {
+color:red;
+display:block;
+font-weight:bold;
+margin-bottom:12px;
+}
