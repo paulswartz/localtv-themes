@@ -229,17 +229,21 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
           {% if user_is_admin %}
           {% editable_widget current_video "tags" %}
           {% else %}
+          {% if current_video.tags.count %}
           {% with current_video as instance %}
           {% include "localtv/inline_edit/video_tags.html" %}
           {% endwith %}
+          {% endif %}
           {% endif %}
 
           {% if user_is_admin %}
           {% editable_widget current_video "categories" %}
           {% else %}
+          {% if current_video.categories.count %}
           {% with current_video as instance %}
           {% include "localtv/inline_edit/video_categories.html" %}
           {% endwith %}
+          {% endif %}
           {% endif %}
         </div>
 <div class="clear">&nbsp;</div>
