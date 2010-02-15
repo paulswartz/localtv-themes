@@ -3,9 +3,10 @@ function setup_submit_callbacks(wrap, result) {
     if (page.filter('#next').length) {
         location.href = page.filter('#next').attr('href');
         return;
-    };
-    wrap.getContent().find('.contentWrap').html(result).find('form:eq(0)').ajaxForm(
-        function(result){setup_submit_callbacks(wrap, result);});
+    }
+    function callback(result){setup_submit_callbacks(wrap, result);}
+    form = wrap.getContent().find('.contentWrap').html(result).find('form:eq(0)');
+    form.ajaxForm(callback).find('button').click(function(){form.ajaxSubmit(callback);});
 }
 
 $(document).ready(function() {
