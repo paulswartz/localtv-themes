@@ -24,6 +24,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% block body_class %}scrolling{% endblock %}
 
 {% block head %}
+  {{ block.super }}
       <script type="text/javascript" src="{% get_static_url "js/easySlider1.5.js" %}"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){	
