@@ -18,7 +18,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}
 
 {% load localtv_thumbnail i18n filters uploadtemplate_tags %}
-{% if video.has_thumbnail %}
+{% if video.has_thumbnail or video.feed.has_thumbnail or video.search.has_thumbnail %}
 <a href="{{ video.get_absolute_url }}" class="image rounded" style="background: #fff url({% get_thumbnail_url video 375 295 %}) no-repeat;">
    <img src="{% get_static_url "/images/play.png" %}" />
 </a> 
