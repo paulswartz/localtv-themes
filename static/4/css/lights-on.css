@@ -180,41 +180,6 @@ margin: 0px 15px 0 0;
 font-size: 10px;
 }
 
-
-
-.editable{
-position: relative;
-padding: 0;
-margin: 0;
-font-size: 12px;
-}
-
-.editable .post_url {
-    display: none;
-}
-
-.input_field{
-display: none;
-border: 3px solid;
-position: absolute;
-left: 0px;
-background: #fff;
-padding: 10px;
-margin-top: -50px;
-z-index: 4789;
-}
-
-
-
-.input_field .done{
-position: absolute;
-right: 0px;
-z-index: 4789;
-top: 0;
-margin: 10px;
-}
-
-
 .posted_by .input_field{
 width: 270px;
 }
@@ -1403,7 +1368,7 @@ float: left;
 
 
 /* use a semi-transparent image for the overlay */
-#overlay, .simple_overlay {
+#overlay {
 	background:#efefef;
 	width: 600px;
     color:#efefef;
