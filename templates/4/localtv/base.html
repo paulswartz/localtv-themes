@@ -39,7 +39,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     <script src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js" type="text/javascript">
     </script>
     <script src="/js/extern/jquery.form.js"></script>
-    <script src="{% get_static_url "js/submit_video.js" %}"></script>
+    <script src="{% get_static_url "/js/miro_community.js" %}"></script>
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 
 sfHover = function() {
@@ -137,7 +137,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 					
 					{% if categories %}
 
-							<li>
+							<li class="categories">
 								<a class="nav_cat" href="{% url localtv_category_index %}">Categories<span></span></a>
 								
 								<ul>
