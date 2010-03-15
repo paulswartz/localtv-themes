@@ -49,7 +49,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
                         {% if editors_comment %}
                         <div class="description editors_notes">
                           <span class="written_by">{{ editors_comment.user }} writes:</span>
-                          {{ editors_comment.comment }}
+                          {{ editors_comment.comment|safe }}
                         </div>
                         {% else %}
 			<div class="description">{{ video.description|sanitize }}</div>
