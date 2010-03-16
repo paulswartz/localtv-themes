@@ -19,7 +19,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}
 
 
-{% load video i18n comments filters uploadtemplate_tags editable_widget localtv_thumbnail tweets email_share_tags cache video_list %}
+{% load video i18n comments filters uploadtemplate_tags editable_widget localtv_thumbnail email_share_tags cache video_list %}
 
 {% block body_id %}view_video{% endblock %}
 
@@ -62,13 +62,6 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
         {% endif %}
         </h2>
         {% endif %}
-				{% comment %}
-				<div class="tweet_up">					
-					<a href="{% tweet_url for current_video %}">Tweet a Thumbs Up!</a>
-					{% get_tweet_count for current_video as tweet_count %}
-					<p>{{ tweet_count }} Tweet{{ tweet_count|pluralize }} (<a href="#comments">see below</a>)</p>
-				</div>
-				{% endcomment %}
       </div>
       <div class="vid_author">
         <div class="posted_by">
