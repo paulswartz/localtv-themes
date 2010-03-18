@@ -862,26 +862,43 @@ right: 0;
 	position: absolute;
 border: 1px solid;
 width: 660px;
-
 margin-top: 33px;
 z-index:999999;
-	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
 background: #333 !important;
+height: auto;
 }
-
-.nav li ul li a{ /* second-level lists */
-background: #333;
-width: 220px;
-overflow: hidden;
-position: relative;
-border-bottom: 1px solid;
-}
-
 .nav li ul li{ /* second-level lists */
-background: #333;
-width: 220px;
-overflow: hidden;
+	background: #333;
+	border: 1px solid #555555;
+	height: 34px;
+	overflow: hidden;
+	position: relative;
+	width: 218px;
 }
+.nav li ul li a{ /* second-level lists */
+	background: #333;
+
+	border-right: none;
+	display: block;
+	height: 33px;
+	overflow: hidden;
+	padding: 0 10px;
+	position: relative;
+	width: 198px;
+	z-index: 88;
+}
+.nav li ul li a div.bg {
+	background: url('../images/subnav_bg.png') repeat-y top right;
+	display: block;
+	height: 33px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 20px;
+	z-index: 99;
+}
+.nav li ul li a:hover div.bg {background: url('../images/subnav_bg_hover.png') repeat-y top right;}
 
 .nav li:hover ul, .nav li.sfhover ul { /* lists nested under hovered list items */
 	left: auto;
@@ -1368,7 +1385,7 @@ float: left;
 
 
 /* use a semi-transparent image for the overlay */
-#overlay {
+#overlay, .simple_overlay {
 	background:#efefef;
 	width: 600px;
     color:#efefef;
@@ -1960,9 +1977,14 @@ div.contentWrap {
     overflow-y:auto;
 }
 
+#submit_video {
+	margin: 0 auto;
+	padding: 20px 0;
+	width: 600px;
+}
 
 #submit_video table{
-width: 530px;
+	width: 520px;
 }
 
 #submit_video #id_url{
@@ -1970,7 +1992,7 @@ border: 1px solid;
 padding: 10px;
 width: 528px;
 font-size: 14px;
-margin: 10px 20px 20px 20px;
+margin: 10px 0 0 10px;
 }
 
 #close_submit_box{
@@ -1981,17 +2003,26 @@ margin-left: 20px;
     display: none;
 }
 
+#submit_video table {
+	padding: 5px;
+}
 #submit_video td{
-width: 520px;
+display: block;
 font-size: 14px;
-margin: 0px;
+margin: 0px 0 20px;
+width: 520px;
 }
 
+#submit_video td label {
+	display: block;
+	font-weight: bold;
+}
+#submit_video td input, #submit_video td textarea {margin-top: 5px;}
+#submit_video td .url {color: blue;}
 
 #submit_video button{
 width: 100px;
 padding: 3px;
-float: right;
 margin-right: 25px;
 }
 
@@ -2088,10 +2119,10 @@ font-size: 14px;
 
 div.login{
 float: none;
-padding: 35px;
 font-size: 12px;
+margin: 20px auto;
+width: 540px;
 }
-
 div.login h1{
 font-size: 16px;
 margin: 0 0 20px;
