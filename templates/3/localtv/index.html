@@ -29,12 +29,14 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     <script type="text/javascript">
         $(function() {
             $('#slider2 ul').cycle({
-                fx: 'scrollLeft', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                fx: 'scrollHorz', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
                 timeout: '4500',
-                next: '#nextBtn2',
-                prev: '#prevBtn2',
+                next: '#nextBtn2 a',
+                prev: '#prevBtn2 a',
+                prevNextClick: function(isNext, zeroBasedSlideIndex, slideElement) {
+                    $('#slider2 ul').cycle('pause');
+                },
                 pause: true,
-                startingSlide: 3,
                 cleartypeNoBg: false
             });
             DD_belatedPNG.fix('#slider2 li img.shadow');
