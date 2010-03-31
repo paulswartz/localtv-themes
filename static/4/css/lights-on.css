@@ -1215,7 +1215,7 @@ padding-top: 20px;
 	root element for the scrollable.
 	when scrolling occurs this element stays still.
 */
-.scrollable {
+#chained {
 
 	/* required settings */
 	position:relative;
@@ -1235,7 +1235,7 @@ padding-top: 20px;
 	it's enough that you set the width and height for the root element and
 	not for this element.
 */
-.scrollable .items {
+#chained .items {
 	/* this cannot be too large */
 	width:20000em;
 	position:absolute;
@@ -1243,7 +1243,7 @@ padding-top: 20px;
 }
 
 /* single scrollable item */
-.scrollable li {
+#chained li {
 	float:left;
 	margin:0px 5px 20px 21px;
 	padding:0px;
@@ -1255,7 +1255,7 @@ padding-top: 20px;
 	}
 
 /* active item */
-.scrollable .active {
+#chained .active {
 	border:2px solid #000;
 	z-index:9999;
 	position:relative;
