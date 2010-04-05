@@ -331,14 +331,14 @@ right: 0;
 	}
 
 
-.heading{
+.heading, h4.meta_title{
 	min-height: 24px;
 	margin: 0px 0 15px 0;
 	border-bottom: 1px solid #ddd;
 	padding: 30px 0 0 0;
 	}
 
-.heading h2{
+.heading h2, h4.meta_title{
 	font-weight: normal;
 	text-transform: uppercase;
 	margin: 0;
@@ -674,6 +674,7 @@ right: 0;
 
 
 .header{
+    font-weight: normal;
 	background: #ecf5ff url(../images/bg_header.gif) bottom left repeat-x;
 	margin: 0;
 		float: left;
@@ -1639,7 +1640,7 @@ min-width: 200px;	}
 
 
 
-.share_box .meta h3{
+.share_box .meta h4{
 margin: 0 0 5px 0;
 padding: 0;
 font-size: 11px;
