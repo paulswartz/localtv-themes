@@ -49,16 +49,16 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 
                         {% get_editors_comment for video as editors_comment %}
                         {% if editors_comment %}
-                        <p class="description editors_notes">
+                        <div class="description editors_notes">
                           <span class="written_by">{{ editors_comment.user }} writes:</span>
                           {{ editors_comment.comment|safe }}
-                        </p>
+                        </div>
                         {% else %}
-			<p class="description">
+			<div class="description">
 				{% autoescape off %}
 				{{ video.description|striptags }}
 				{% endautoescape %}
-			</p>
+			</div>
 			{% endif %}
 			
 			

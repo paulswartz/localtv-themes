@@ -536,7 +536,7 @@ right: 0;
 
 	}
 
-.vid_list .item_details p.description{
+.vid_list .item_details .description{
 	font-size: 12px;
 	line-height: 1.5em;
 	margin-left: 35px;
@@ -1196,11 +1196,14 @@ line-height: 1.5em;
 	line-height: 1.4em !important;
 	margin-left: 35px;
 	height: 112px;
-
-	overflow: hidden;
+        width: 450px;
 padding-top: 20px;
 	}
 
+.inner_slider .item_details .description > div {
+    height: 97px;
+    overflow: hidden;
+}
 .inner_slider .item_details .description *{
 	line-height: 1.4em !important;
 	}
