@@ -32,14 +32,14 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
   {% endif %}
   {% get_comment_form for current_video as comment_form %}
   {% if comment_form.fields.captcha %}<script type="text/javascript"
-          src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script>{% endif %}
-  {% if user_is_admin %}
-  {{ comment_form.media }}
-  {% else %}
+          src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script>
   <script type="text/javascript">
-      tinyMCE = {init: function(){}};
-  </script>
-  {% endif %}
+      function recaptcha_ajax_callback() {
+          Recaptcha.create("{{ settings.RECAPTCHA_PUBLIC_KEY }}", "recaptcha_ajax_field", {})
+      }
+  </script>{% endif %}
+  <script type="text/javascript" src="{% get_static_url "/js/extern/jquery.form.js" %}"></script>
+  <script type="text/javascript" src="{% get_static_url "/js/comment.js" %}"></script>
   {% include "localtv/view_video_meta.html" %}
 {% endblock %}
 
@@ -145,7 +145,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     {% if comment_count %}<div class="heading"><h2 class="comments-title">{{ comment_count }} Comment{{ comment_count|pluralize }}</h2></div>{% endif %}
     {% get_comment_list for current_video as comments %}
     {% if comments %}
-    <ul class="comment_list">
+    <ul class="comment_list" id="comments">
       {% for comment in comments %}
       
       
@@ -193,7 +193,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     </div>
     {% get_comment_form for current_video as comment_form %}
     <div class="comment_form">
-	    <form action="{% comment_form_target %}" method="post">
+	    <form action="{% comment_form_target %}" method="post" id="comment_form">
 	      {% with comment_form as form %}
 	      {% include "comments/form_base.html" %}
 	      {% endwith %}
