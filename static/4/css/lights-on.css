@@ -551,6 +551,10 @@ right: 0;
 	background: #000;
 	}
 
+.vid_inner div.djvideo-flowplayer {
+    margin: 0 auto;
+}
+
 /*-----------------------------------------
 ~ Thumbnails
 ------------------------------------------*/
