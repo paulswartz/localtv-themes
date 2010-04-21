@@ -1205,9 +1205,17 @@ padding-top: 20px;
 	}
 
 .inner_slider .item_details .description > div {
-    height: 7.8em;
     overflow: hidden;
 }
+
+.inner_slider .item_details .description > div {
+    height: 10em;
+}
+
+.inner_slider .item_details .description.editors_notes > div {
+    height: 7.8em;
+}
+
 .inner_slider .item_details .description *{
 	line-height: 1.4em !important;
 	}
