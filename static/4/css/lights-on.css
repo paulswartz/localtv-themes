@@ -343,7 +343,7 @@ right: 0;
 	text-transform: uppercase;
 	margin: 0;
 	font-size: 13px;
-	float: none !important;
+	float: left;
 	}
 
 .heading .rss{
