@@ -142,7 +142,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 								
 								<ul>
 									{% for category in categories %}
-										<li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+										<li><a href="{{ category.get_absolute_url }}"><div class="bg"></div>{{ category }}</a></li>
 									{% endfor %}										
 								</ul>								
 							</li>
@@ -195,13 +195,18 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 				</div>
 				
 				<div class="global_footer">
-					<p class="powered"><span>{{ sitelocation.site.name }} is powered by</span> <a class="miro-community" href="http://www.mirocommunity.org">Miro Community</a></p>
-					
+                                  <div class="powered"><span>{{ sitelocation.site.name }} is powered by</span> <a class="miro-community" href="http://www.mirocommunity.org">Miro Community</a></div>
+					<ul id="footer_links">
+                                          <li><a href="{% url localtv_index %}">Home</a></li>
+                                          <li><a href="{% url localtv_goodies %}">Goodies</a></li>
+                                          <li>
 					{% if request.user.is_authenticated %}
 						<a class="login" href="{{ settings.LOGOUT_URL }}?next={{ request.META.PATH_INFO }}">Logout {{ request.user.username }}</a>
 					{% else %}
 						<a href="{{ settings.LOGIN_URL }}?next={{ request.META.PATH_INFO }}" class="login" rel="#overlay" title="Please Sign In">Login</a>
 					{% endif %}
+                                          </li>
+                                        </ul>
 				</div>
 			</div>
 			
