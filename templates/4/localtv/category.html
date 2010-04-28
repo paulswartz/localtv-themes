@@ -18,6 +18,7 @@ You should have received a copy of the GNU Affero General Public License
 along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}
 
+{% load pagetabs %}
 {% block body_id %}category_page{% endblock %}
 
 
@@ -62,17 +63,19 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
   {% endif %}
 </div>
 <div id="category">
-
-  {% if category.approved_set.count %}
+{% if page_obj.has_other_pages %}
+<div class="pag">
+  <b>Pages</b>
+  {% pagetabs page_obj %}
+</div>
+{% endif %}
   <ul class="vid_list">
-    {% for video in category.approved_set.all %}
+    {% for video in video_list %}
     <li>
       {% include "localtv/video_listing_individual.html" %}
     </li>
     {% endfor %}
   </ul>
-  {% endif %}
-
 </div>
 <div class="clear">&nbsp;</div>
 
