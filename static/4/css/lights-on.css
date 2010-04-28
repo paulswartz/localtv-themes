@@ -1890,12 +1890,23 @@ background-position: 130px 11px !important;
 	height: 3.3em;
 	}
 
-
-#footer .global_footer p span{
+#footer .powered {
+    margin-top: 1em;
+}
+#footer .powered span{
 	float: left;
 	padding: 1px 7px 0 0 ;
 	}
 
+#footer_links {
+    float: right;
+    margin: 0;
+}
+
+#footer_links li {
+    display: inline;
+    padding: 0 5px;
+}
 
 a.login{
 float: right;
@@ -2135,4 +2146,31 @@ color:red;
 display:block;
 font-weight:bold;
 margin-bottom:12px;
+}
+
+#widget-base h2 {
+    margin-top: 10px;
+}
+#widget-settings, #widget-display {
+    float: left;
+}
+
+#widget-settings {
+    padding-right: 40px;
+}
+#widget-code h2 {
+    float: none;
+}
+#widget-code textarea {
+    float: left;
+}
+#widget-display {
+    width: 100%;
+    border-top: 2px solid grey;
+    margin-top: 40px;
+}
+
+#widget-example {
+    margin: 30px auto;
+    width: 300px;
 }
