@@ -1272,7 +1272,7 @@ a.disabled {
 }
 
 /* position and dimensions of the navigator */
-.navi {
+#navi_parent {
 	float: right;
 	position: relative;
         top: 29px;
@@ -1282,12 +1282,16 @@ a.disabled {
 	z-index: 1;
 	}
 
+.navi {
+    float: right;
+}
+
 /* items inside navigator */
 .navi a {
+    float: left;
 	width: 10px;
 	height: 10px;
-	float:right;
-	margin:3px;
+	margin: 0 3px;
 	background:url(../images/nav_dots.gif) 0 0px no-repeat;
 	display:block;
 }
