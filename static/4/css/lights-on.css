@@ -288,6 +288,10 @@ right: 0;
 	float: left;
 	}
 
+.editable h4.meta_title {
+    float: none;
+}
+
 .heading .rss{
 	color: #666;
 	float: left;
