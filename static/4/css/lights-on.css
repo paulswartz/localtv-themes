@@ -1145,9 +1145,9 @@ line-height: 1.5em;
 
 .inner_slider .item_details .description{
 	font-size: 13px;
-	line-height: 1.4em !important;
+	line-height: 18px !important;
 	margin-left: 35px;
-	height: 112px;
+	height: 126px;
         width: 450px;
 padding-top: 20px;
 	}
@@ -1157,15 +1157,17 @@ padding-top: 20px;
 }
 
 .inner_slider .item_details .description > div {
-    height: 10.4em;
+    height: 126px;
 }
 
 .inner_slider .item_details .description.editors_notes > div {
-    height: 7.8em;
+    height: 108px;
 }
 
 .inner_slider .item_details .description *{
-	line-height: 1.4em !important;
+	line-height: 18px !important;
+        margin:0;
+        padding:0;
 	}
 
 
