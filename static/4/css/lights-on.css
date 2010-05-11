@@ -483,10 +483,12 @@ right: 0;
 	}
 
 .vid_list .item_details .description{
-	font-size: 12px;
-	line-height: 1.5em;
-	margin-left: 35px;
-	margin-bottom: 20px;
+font-size:12px;
+height:180px;
+line-height:18px;
+margin-bottom:20px;
+margin-left:35px;
+overflow:hidden;
 	}
 
 
