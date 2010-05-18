@@ -199,6 +199,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
                                   <div class="powered"><span>{{ sitelocation.site.name }} is powered by</span> <a class="miro-community" href="http://www.mirocommunity.org">Miro Community</a></div>
 					<ul id="footer_links">
                                           <li><a href="{% url localtv_index %}">Home</a></li>
+                                          {% if request.user.is_authenticated %}<li><a href="{% url localtv_user_profile %}">Your Profile</a><li>{% endif %}
                                           <li><a href="{% url localtv_goodies_widget %}">Goodies</a></li>
                                           <li>
 					{% if request.user.is_authenticated %}
