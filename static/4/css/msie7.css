@@ -5,3 +5,8 @@
 #video_wrapper {
     clear: none;
 }
+
+.vid_list li {
+    float: none;
+    padding-bottom: 280px;
+}
