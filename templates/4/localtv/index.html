@@ -142,7 +142,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 				</div>
 				
 				<ul>
-                                  {% cache 3600 index_blue_popular sitelocation %}{# one hour #}
+                                  {% cache 3600 index_blue_popular sitelocation cache_invalidator %}{# one hour #}
                                   {% for video in popular_videos|slice:":8" %}
                                   {% include "localtv/sidebar_video.html" %}
                                   {% endfor %}
