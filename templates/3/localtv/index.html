@@ -24,6 +24,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 {% block body_class %}scrolling{% endblock %}
 
 {% block head %}
+  {{ block.super }}
     <script src="{% get_static_url "js/jquery.cycle.all.min.js" %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% get_static_url "js/DD_belatedPNG_0.0.8a-min.js" %}" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">

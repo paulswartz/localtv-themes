@@ -59,7 +59,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 //--><!]]></script>
 
 
-    <title>{% block title %}{{ sitelocation.site.name }}{% endblock title %}</title>
+    <title>{% block title %}{{ sitelocation.site.name }}{% if sitelocation.tagline %} - {{ sitelocation.tagline }}{% endif %}{% endblock title %}</title>
     
     {% block head %}
     <meta name="description" content="{{ sitelocation.about_html|striptags }}">
