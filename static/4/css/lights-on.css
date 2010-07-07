@@ -425,7 +425,7 @@ right: 0;
 	margin: 0;
 	}
 
-.vid_list li{
+.vid_list > li{
 	list-style: none;
 	border-bottom: 1px dotted #999;
 	padding-bottom: 30px;
@@ -1315,9 +1315,9 @@ a.disabled {
 
 ////////////////////////////////////////////*/
 
-#video_listing_new ul.vid_list li,
-#video_listing_featured ul.vid_list li,
-#video_listing_popular ul.vid_list li{
+#video_listing_new ul.vid_list > li,
+#video_listing_featured ul.vid_list > li,
+#video_listing_popular ul.vid_list > li{
 float: left;
 }
 
@@ -2088,7 +2088,7 @@ float: left;
 float: left;
 }
 
-#category .vid_list li{
+#category .vid_list > li{
 margin: 0;
 }
 
