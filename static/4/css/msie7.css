@@ -6,7 +6,7 @@
     clear: none;
 }
 
-.vid_list li {
+.vid_list > li {
     float: none;
     padding-bottom: 280px;
 }
