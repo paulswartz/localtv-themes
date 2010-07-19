@@ -10,3 +10,7 @@
     float: none;
     padding-bottom: 280px;
 }
+
+#home_page .editors_notes {
+    padding-bottom: 0;
+}
