@@ -2073,7 +2073,7 @@ font-size: 11px;
 
 
 #author_page #category_sidebar img{
-width: 270px;
+max-width: 270px;
 }
 
 
