@@ -2316,6 +2316,8 @@ margin-bottom:12px;
 #playlists .playlist_title A {
     text-decoration: none;
     color: #5D5D5D;
+    padding-left: 20px;
+    margin-left: -20px;
 }
 
 #playlists .playlist_name {

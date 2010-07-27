@@ -33,7 +33,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
                 </a>
 		<div class="item_details">
 		
-			<h2><a href="{{ video.get_absolute_url }}" title="{{ video.name }}">{% if video.name %} {{ video.name }} {% else %} {% trans "(no title)" %} {% endif %}</a></h2>
+			<h2><a href="{{ video.get_absolute_url }}{{ video_url_extra }}" title="{{ video.name }}">{% if video.name %} {{ video.name }} {% else %} {% trans "(no title)" %} {% endif %}</a></h2>
 			
 			<div class="credits">
 			
