@@ -2345,15 +2345,8 @@ margin-bottom:12px;
     text-decoration: underline;
 }
 
-
-#playlists h3 {
-    color: #5d5d5d;
-    font-weight: normal;
-    padding: 0px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    margin: 0px;
+h3.playlist_title {
+    padding-left: 2em;
 }
 
 #playlists .playlist_title {
@@ -2389,7 +2382,10 @@ margin-bottom:12px;
     margin-left: 10px;
     height: 100px;
 }
-
+.playlist_thumbs + div.heading {
+    clear: left;
+    padding-top: 0;
+}
 .playlist_thumbs A {
     border: 0px;
     text-decoration: none;
