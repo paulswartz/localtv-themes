@@ -63,6 +63,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
     
     {% block head %}
     <meta name="description" content="{{ sitelocation.about_html|striptags }}">
+    {% if sitelocation.has_thumbnail %}<link rel="image_src" href="{% get_thumbnail_url sitelocation 130 110 %}" />{% endif %}
     {% endblock %}
     
   </head>
