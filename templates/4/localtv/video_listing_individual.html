@@ -57,9 +57,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
                         </div>
                         {% else %}
 			<div class="description">
-				{% autoescape off %}
-				{{ video.description|striptags }}
-				{% endautoescape %}
+				{{ video.description|sanitize }}
 			</div>
 			{% endif %}
 			
