@@ -24,7 +24,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 		<a href="{{ video.get_absolute_url }}" class="image main_thumb" style="background: url({% get_static_url "/images/default_big.jpg" %}) no-repeat center -50px;">
                 {% endif %}
                 {% get_comment_count for video as comment_count %}
-                {% if comment_count %}<span class="comments_overlay"><span>{{ comment_count }} Comment{{ comment_count.pluralize }}</span></span>{% endif %}
+                {% if comment_count %}<span class="comments_overlay"><span>{{ comment_count }} Comment{{ comment_count|pluralize }}</span></span>{% endif %}
 		</a>
                 <div class="item_details">
 			<div class="editors">Editor's Pick</div>
