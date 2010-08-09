@@ -479,7 +479,8 @@ right: 0;
 
 .vid_list .item_details .description{
 font-size:12px;
-height:180px;
+max-height:180px;
+min-height:89px;
 line-height:18px;
 margin-bottom:20px;
 margin-left:35px;
