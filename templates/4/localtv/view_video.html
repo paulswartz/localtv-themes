@@ -239,6 +239,21 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
           {% endwith %}
           {% endif %}
           {% endif %}
+
+          {% if user_is_admin %}
+          {% if current_video.contact %}
+          <div class="floatleft">
+            <h4>Contact</h4>
+            <ul><li>{{ current_video.contact }}</li></ul>
+          </div>
+          {% endif %}
+          {% if current_video.notes %}
+          <div class="floatleft">
+            <h4>Notes</h4>
+            <ul><li>{{ current_video.notes }}</li></ul>
+          </div>
+          {% endif %}
+          {% endif %}
         </div>
 <div class="clear">&nbsp;</div>
 
