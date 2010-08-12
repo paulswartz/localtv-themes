@@ -57,7 +57,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
                         </div>
                         {% else %}
 			<div class="description">
-				{{ video.description|sanitize }}
+				{{ video.description|sanitize:"whitelist|a br p|href" }}
 			</div>
 			{% endif %}
 			

@@ -49,6 +49,6 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     Featured {{ video.last_featured|simpletimesince }} ago
   </span>
   <div>
-      {{ video.description|sanitize }}</div>
+      {{ video.description|sanitize:"whitelist|a br p|href" }}</div>
 </div>
 <a href="{{ video.get_absolute_url }}" class="watch med_button"><span>Watch</span></a>
