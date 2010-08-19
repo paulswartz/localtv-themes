@@ -73,7 +73,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     <h1>Welcome to Your New Site!</h1>
     <p>The first step is to add videos to your site. Videos can be added one at a time or lots at once from a source (such as a YouTube account, or an RSS feed). <br />To get started, log in:</p>
     <div id="loginfields">
-      <form action="{{ settings.LOGIN_URL }}" method="post">
+      <form action="{{ settings.LOGIN_URL }}" method="post">{% csrf_token %}
         <div id="loginusername">
           <p>
             <label for="id_username">Username</label>
