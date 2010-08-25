@@ -96,7 +96,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 			
 				<div class="search">
 					<form id="search" action="{% url localtv_search %}" method="get">
-						<input name="q" type="text" class="search_field" value="{{ request.GET.query }}"/>
+						<input name="q" type="text" class="search_field" value="{{ query }}"/>
 						<button value="submit">Search</button>
 					</form>
 				</div>
