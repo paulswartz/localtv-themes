@@ -223,7 +223,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
           {% if user_is_admin %}
           {% editable_widget current_video "tags" %}
           {% else %}
-          {% if current_video.tags.count %}
+          {% if current_video.tags.exists %}
           {% with current_video as instance %}
           {% include "localtv/inline_edit/video_tags.html" %}
           {% endwith %}
@@ -233,7 +233,7 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
           {% if user_is_admin %}
           {% editable_widget current_video "categories" %}
           {% else %}
-          {% if current_video.categories.count %}
+          {% if current_video.categories.exists %}
           {% with current_video as instance %}
           {% include "localtv/inline_edit/video_categories.html" %}
           {% endwith %}
@@ -326,13 +326,14 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
         {% for playlist in playlists %}
         {% if playlist not in current_video.playlists.all %}<option value="{{ playlist.pk }}">{{ playlist.name }}</option>{% endif %}
         {% endfor %}
-        <option value="new">New playlist...</option>
+        {# <option value="new">New playlist...</option> #}
       </select>
       <input type="submit" value="Add"/>
     </form>
     <form method="POST" action="{% url localtv_playlist_index %}">
-      <input type="hidden" name="name" />
+      <input type="text" name="name" />
       <input type="hidden" name="video" value="{{ current_video.pk }}">
+      <input type="submit" value="Add New Playlist">
     </form>
     {% endif %}
     {% endif %}
