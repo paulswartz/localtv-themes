@@ -2306,6 +2306,7 @@ margin-bottom:12px;
 
 /* Playlists */
 #playlists {
+    min-height: 0;
     margin-bottom: 20px;
 }
 
