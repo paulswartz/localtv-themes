@@ -2401,3 +2401,9 @@ h3.playlist_title {
 #playlists + form {
     clear: left;
 }
+
+#playlists .private, #playlists .private a,
+.playlist_title .private, .playlist_title .private a {
+    color: red;
+    font-size: 0.9em;
+}
