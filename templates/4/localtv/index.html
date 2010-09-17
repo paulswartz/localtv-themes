@@ -94,12 +94,12 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
 			$(document).ready(function() {
 			
 			// heeeeeeeeeeere we go.
-			$("#chained").scrollable({size: 1, speed: 500, hoverClass: 'hover'}).circular().navigator().autoscroll({
+			$("#chained").scrollable({size: 1, speed: 500, circular: true}).navigator().autoscroll({
 				steps: 1,
 				interval: 7425
 			});
                         $('#navi_parent .navi').click(function() {$("#chained").scrollable().stop();});
-			});
+                        });
 			</script>
 
     </div>
