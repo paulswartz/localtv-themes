@@ -155,7 +155,10 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
       <li>
      <div class="item_details">
 
-          <h4><a href="#">{{ comment.user_name }}</a> <span>{{ comment.submit_date|date:"F j, Y, g:i a T" }}</span></h4>
+          <h4>
+            {% if comment.user %}<a href="{% url localtv_author comment.user.pk %}">{{ comment.user_name }}</a>{% else %}{{ comment.user_name }}{% endif %}
+            <span>{{ comment.submit_date|date:"F j, Y, g:i a T" }}</span>
+          </h4>
         
         
         <div class="comment">
