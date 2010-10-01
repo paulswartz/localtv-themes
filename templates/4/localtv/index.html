@@ -127,7 +127,8 @@ along with Miro Community.  If not, see <http://www.gnu.org/licenses/>.
     {% endfor %}
     	</ul>
 
-								<a href="{% url localtv_list_new %}" class="more_large"><span>See 10 More</span></a>
+		<a href="{% url localtv_list_new %}{% with new_videos|slice:":6" as items %}{% if items.5 %}#video-{{ items.5.pk }}{% endif %}{% endwith %}" class="more_large"><span>See 10 More</span></a>
+
   
   </div>
 
